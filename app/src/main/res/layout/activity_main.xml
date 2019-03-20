@@ -1,13 +1,185 @@
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <!--match_parent - ocpupa todo espaço disponivel-->
     <!-- wrap_content - ocupar o espaço do conteúdo -->
 
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/txtResultado"
         android:layout_width="match_parent"
-        android:layout_height="200px" />
+        android:layout_height="200px"
+        android:background="@color/colorPrimaryDark"
+        android:textSize="48sp" />
+
+    <Button
+        android:id="@+id/btnNumero9"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="450px"
+        android:layout_y="205px"
+        android:text="9"
+        android:textSize="42sp"
+        android:onClick="btnNumero9Click" />
+
+    <Button
+        android:id="@+id/btnNumero8"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="230px"
+        android:layout_y="205px"
+        android:text="8"
+        android:textSize="42sp"
+        android:onClick="btnNumero8Click" />
+
+    <Button
+        android:id="@+id/btnNumero7"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="0px"
+        android:layout_y="205px"
+        android:text="7"
+        android:textSize="42sp"
+        android:onClick="btnNumero7Click" />
+
+    <Button
+        android:id="@+id/btnNumero4"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="0px"
+        android:layout_y="400px"
+        android:text="4"
+        android:textSize="42sp"
+        android:onClick="btnNumero4Click" />
+
+    <Button
+        android:id="@+id/btnNumero5"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="230px"
+        android:layout_y="400px"
+        android:text="5"
+        android:textSize="42sp"
+        android:onClick="btnNumero5Click" />
+
+    <Button
+        android:id="@+id/btnNumero6"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="450px"
+        android:layout_y="400px"
+        android:text="6"
+        android:textSize="42sp"
+        android:onClick="btnNumero6Click" />
+
+    <Button
+        android:id="@+id/btnNumero1"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="0px"
+        android:layout_y="600px"
+        android:text="1"
+        android:textSize="42sp"
+        android:onClick="btnNumero1Click" />
+
+    <Button
+        android:id="@+id/btnNumero2"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="230px"
+        android:layout_y="600px"
+        android:text="2"
+        android:textSize="42sp"
+        android:onClick="btnNumero2Click" />
+
+    <Button
+        android:id="@+id/btnNumero3"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="450px"
+        android:layout_y="600px"
+        android:text="3"
+        android:textSize="42sp"
+        android:onClick="btnNumero3Click"/>
+
+    <Button
+        android:id="@+id/btnNumero0"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="0px"
+        android:layout_y="800px"
+        android:text="0"
+        android:textSize="42sp"
+        android:onClick="btnNumero0Click"/>
+
+    <Button
+        android:id="@+id/btnVirgula"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="230px"
+        android:layout_y="800px"
+        android:text=","
+        android:textSize="42sp"
+        android:onClick="btnVirgulaClick"/>
+
+    <Button
+        android:id="@+id/btnIgual"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="450px"
+        android:layout_y="800px"
+        android:text="="
+        android:textSize="42sp"
+        android:onClick="btnIgualClick"/>
+
+    <Button
+        android:id="@+id/btnMais"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="650px"
+        android:layout_y="800px"
+        android:text="+"
+        android:textSize="42sp"
+        android:onClick="btnMaisClick"/>
+
+    <Button
+        android:id="@+id/btnMenos"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="650px"
+        android:layout_y="600px"
+        android:text="-"
+        android:textSize="42sp"
+        android:onClick="btnMenosClick"/>
+
+    <Button
+        android:id="@+id/btnMultiplicar"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="650px"
+        android:layout_y="400px"
+        android:text="*"
+        android:textSize="42sp"
+        android:onClick="btnMultiplicarClick"/>
+
+    <Button
+        android:id="@+id/btnDividir"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_x="650px"
+        android:layout_y="200px"
+        android:text="/"
+        android:textSize="42sp"
+        android:onClick="btnDividirClick" />
+
+    <Button
+        android:id="@+id/btnLimpar"
+        android:layout_width="850px"
+        android:layout_height="200px"
+        android:layout_x="0px"
+        android:layout_y="1000px"
+        android:text="LIMPAR"
+        android:textSize="42sp"
+        android:onClick="btnLimpar"/>
 
 </AbsoluteLayout>

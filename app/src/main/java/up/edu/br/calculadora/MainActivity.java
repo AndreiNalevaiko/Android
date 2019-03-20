@@ -2,6 +2,7 @@ package up.edu.br.calculadora;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout_linear);
 
         btnNumero0 = (Button) findViewById(R.id.btnNumero0);
         btnNumero1 = (Button) findViewById(R.id.btnNumero1);
@@ -48,98 +49,50 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void btnNumero9Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "9");
+    public void btnNumeroClick(View view){
+        Button btn = (Button) view;
+        txtResultado.setText(txtResultado.getText() + btn.getText().toString());
     }
 
-    public void btnNumero8Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "8");
-    }
-
-    public void btnNumero7Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "7");
-    }
-
-    public void btnNumero6Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "6");
-    }
-
-    public void btnNumero5Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "5");
-    }
-
-    public void btnNumero4Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "4");
-    }
-
-    public void btnNumero3Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "3");
-    }
-
-    public void btnNumero2Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "2");
-    }
-
-    public void btnNumero1Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "1");
-    }
-
-    public void btnNumero0Click(View view) {
-        txtResultado.setText(txtResultado.getText() + "0");
-    }
-
-    public void btnVirgulaClick(View view) {
-        if(!txtResultado.getText().toString().contains(",")){
-            txtResultado.setText(txtResultado.getText() + ",");
+    public void btnOperadorClick(View view){
+        if(!TextUtils.isEmpty(txtResultado.getText().toString())){
+            Button btn = (Button) view;
+            numero1 = Double.valueOf(txtResultado.getText().toString());
+            txtResultado.setText("");
+            operador = btn.getText().toString();
         }
-    }
 
-    public void btnMaisClick(View view) {
-        numero1 = Double.valueOf(txtResultado.getText().toString());
-        txtResultado.setText("");
-        operador = "+";
-    }
-
-    public void btnMenosClick(View view) {
-        numero1 = Double.valueOf(txtResultado.getText().toString());
-        txtResultado.setText("");
-        operador = "-";
-    }
-
-    public void btnMultiplicarClick(View view) {
-        numero1 = Double.valueOf(txtResultado.getText().toString());
-        txtResultado.setText("");
-        operador = "*";
     }
 
     public void btnIgualClick(View view) {
-        numero2 = Double.valueOf(txtResultado.getText().toString());
-        switch (operador) {
-            case "*": {
-                resultado = numero1 * numero2;
-                break;
-            }
-            case "+": {
-                resultado = numero1 + numero2;
-                break;
-            }
-            case "-": {
-                resultado = numero1 - numero2;
-                break;
-            }
-            case "/": {
-                resultado = numero1 / numero2;
-                break;
+        if(!TextUtils.isEmpty(txtResultado.getText().toString())){
+            numero2 = Double.valueOf(txtResultado.getText().toString());
+            switch (operador) {
+                case "*": {
+                    resultado = numero1 * numero2;
+                    break;
+                }
+                case "+": {
+                    resultado = numero1 + numero2;
+                    break;
+                }
+                case "-": {
+                    resultado = numero1 - numero2;
+                    break;
+                }
+                case "/": {
+                    resultado = numero1 / numero2;
+                    break;
+                }
             }
         }
 
         txtResultado.setText(String.valueOf(resultado));
     }
-
-    public void btnDividirClick(View view) {
-        numero1 = Double.valueOf(txtResultado.getText().toString());
-        txtResultado.setText("");
-        operador = "/";
+    public void btnVirgulaClick(View view) {
+        if(!txtResultado.getText().toString().contains(".")){
+            txtResultado.setText(txtResultado.getText() + ".");
+        }
     }
 
     public void btnLimpar(View view) {
